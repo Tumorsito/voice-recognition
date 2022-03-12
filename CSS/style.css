@@ -1,0 +1,267 @@
+/*>>>>>>>>>>>>>>>>>>> Fuentes <<<<<<<<<<<<<<<<<<<*/
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap");
+* {
+  font-family: "Amatic SC", cursive;
+}
+
+/*>>>>>>>>>>>>>>>>>>> Variables <<<<<<<<<<<<<<<<<<<*/
+
+:root {
+  /*Colores*/
+  --color-primario: #000;
+  --color-secundario: #fff;
+  /*Borde*/
+  --borde-primario: solid 8px var(--color-secundario);
+  --radio-borde: 20px;
+
+  /*Tamaños de letra*/
+  --titulo: 40px;
+  --subtitulo: 30px;
+}
+
+/*>>>>>>>>>>>>>>>>>>> Elementos generales <<<<<<<<<<<<<<<<<<<*/
+
+.boton-pequeño {
+  /*General*/
+  padding: 10px;
+  cursor: pointer;
+  background-color: var(--color-primario);
+
+  /*Borde*/
+  border: var(--borde-primario);
+  border-radius: var(--radio-borde);
+
+  /*Fuente*/
+  color: var(--color-secundario);
+  font-weight: bold;
+  font-size: var(--subtitulo);
+}
+
+.boton-grande {
+  /*General*/
+  padding: 10px;
+  cursor: pointer;
+  background-color: var(--color-primario);
+
+  /*Borde*/
+  border: var(--borde-primario);
+  border-radius: var(--radio-borde);
+
+  /*Fuente*/
+  color: var(--color-secundario);
+  font-weight: bold;
+  font-size: var(--titulo);
+}
+
+.contenedor-sin-borde {
+  /*General*/
+  background-color: var(--color-primario);
+
+  /*Fuente*/
+  font-size: var(--titulo);
+  font-weight: bold;
+}
+
+.contenedor-con-borde {
+  /*General*/
+  padding: 20px;
+  background-color: var(--color-primario);
+
+  /*Borde*/
+  border: var(--borde-primario);
+  border-radius: var(--radio-borde);
+
+  /*Fuente*/
+  font-size: var(--subtitulo);
+  font-weight: bold;
+}
+
+/*>>>>>>>>>>>>>>>>>>> Estructura y contenedores <<<<<<<<<<<<<<<<<<<*/
+
+html,
+body {
+  background-color: var(--color-primario);
+  width: 100vw;
+  height: 100vh;
+}
+
+#contenedor-principal {
+  /*General*/
+  width: 100%;
+  height: 100vh;
+
+  /*Grid*/
+  display: grid;
+  grid-template-columns: 0.1fr 2fr 0.1fr;
+  grid-template-rows: 0.8fr 450px 0.8fr;
+  grid-template-areas:
+    "cabecera cabecera cabecera"
+    "contenedor-articulo contenedor-articulo contenedor-articulo"
+    "pie-de-pagina pie-de-pagina pie-de-pagina";
+
+  /*Fuente*/
+  font-size: var(--titulo);
+  font-weight: bold;
+}
+
+#contenedor-cabecera {
+  /*General*/
+  grid-area: cabecera;
+  background-color: var(--color-primario);
+
+  /*Flex*/
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  letter-spacing: 10px;
+}
+
+#contenedor-cabecera:before,
+#contenedor-cabecera:after {
+  content: "";
+  flex: 1 1;
+  border-bottom: var(--borde-primario);
+  margin: 20px;
+}
+
+#contenedor-articulo {
+  /*General*/
+  grid-area: contenedor-articulo;
+  background-color: var(--color-primario);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#contenedor-pie-de-pagina {
+  /*General*/
+  grid-area: pie-de-pagina;
+  background-color: var(--color-primario);
+
+  /*Flex*/
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 50;
+  letter-spacing: 10px;
+}
+
+#contenedor-pie-de-pagina:before,
+#contenedor-pie-de-pagina:after {
+  content: "";
+  flex: 1 1;
+  border-bottom: var(--borde-primario);
+  margin: 20px;
+}
+
+#contenedor-texto {
+  width: 80%;
+  height: 90%;
+  z-index: 10;
+  color: var(--color-secundario);
+  max-width: 80%;
+  overflow-y: scroll;
+  font-size: var(--titulo);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#contenedor-texto::selection {
+  background-color: var(--color-secundario);
+  color: var(--color-primario);
+}
+
+#contenedor-texto::-webkit-scrollbar {
+  display: none;
+}
+
+/*>>>>>>>>>>>>>>>>>>> Elementos individuales <<<<<<<<<<<<<<<<<<<*/
+
+#boton-titulo {
+  width: fit-content;
+  text-decoration: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#boton-microfono {
+  width: fit-content;
+  text-decoration: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 10px;
+  font-size: 40px;
+}
+
+/*>>>>>>>>>>>>>>>>>>> Animaciones <<<<<<<<<<<<<<<<<<<*/
+
+@keyframes animacion-boton-hover {
+  from {
+    transform: scale(1);
+    background-color: var(--color-primario);
+    color: var(--color-secundario);
+  }
+  to {
+    transform: scale(1.1);
+    background-color: var(--color-secundario);
+    color: var(--color-primario);
+  }
+}
+
+@keyframes animacion-boton-hover-out {
+  from {
+    transform: scale(1.1);
+    background-color: var(--color-secundario);
+    color: var(--color-primario);
+  }
+  to {
+    transform: scale(1);
+    background-color: var(--color-primario);
+    color: var(--color-secundario);
+  }
+}
+
+@keyframes animacion-boton-click {
+  0% {
+    transform: scale(1.1);
+    background-color: var(--color-secundario);
+    color: var(--color-primario);
+  }
+  50% {
+    transform: scale(1);
+    background-color: var(--color-primario);
+    color: var(--color-secundario);
+  }
+  100% {
+    transform: scale(1.1);
+    background-color: var(--color-secundario);
+    color: var(--color-primario);
+  }
+}
+
+@keyframes animacion-boton-click-restart {
+  from {
+    transform: scale(1.1);
+    background-color: var(--color-secundario);
+    color: var(--color-primario);
+  }
+  to {
+    transform: scale(1.1);
+    background-color: var(--color-secundario);
+    color: var(--color-primario);
+  }
+}
