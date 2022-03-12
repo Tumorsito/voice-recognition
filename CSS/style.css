@@ -94,7 +94,7 @@ body {
   /*Grid*/
   display: grid;
   grid-template-columns: 0.1fr 2fr 0.1fr;
-  grid-template-rows: 0.8fr 450px 0.8fr;
+  grid-template-rows: 0.8fr 350px 0.8fr;
   grid-template-areas:
     "cabecera cabecera cabecera"
     "contenedor-articulo contenedor-articulo contenedor-articulo"
@@ -109,6 +109,7 @@ body {
   /*General*/
   grid-area: cabecera;
   background-color: var(--color-primario);
+  padding-top: 20px;
 
   /*Flex*/
   display: flex;
@@ -194,6 +195,12 @@ body {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 #boton-microfono {
@@ -264,4 +271,12 @@ body {
     background-color: var(--color-secundario);
     color: var(--color-primario);
   }
+}
+
+/*>>>>>>>>>>>>>>>>>>> Media Query <<<<<<<<<<<<<<<<<<<*/
+@media screen and (max-width:400px) {
+    :root{
+        --titulo: 30px;
+        --subtitulo: 20px;
+    }
 }
