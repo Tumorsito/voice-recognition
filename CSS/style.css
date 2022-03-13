@@ -5,6 +5,11 @@
   font-family: "Amatic SC", cursive;
 }
 
+*::selection{
+    background-color: var(--color-secundario);
+    color: var(--color-primario);
+}
+
 /*>>>>>>>>>>>>>>>>>>> Variables <<<<<<<<<<<<<<<<<<<*/
 
 :root {
@@ -77,10 +82,12 @@
   font-weight: bold;
 }
 
+li{
+    list-style: none;
+}
 /*>>>>>>>>>>>>>>>>>>> Estructura y contenedores <<<<<<<<<<<<<<<<<<<*/
 
-html,
-body {
+html, body {
   background-color: var(--color-primario);
   width: 100vw;
   height: 100vh;
@@ -120,8 +127,7 @@ body {
   letter-spacing: 10px;
 }
 
-#contenedor-cabecera:before,
-#contenedor-cabecera:after {
+#contenedor-cabecera:before, #contenedor-cabecera:after {
   content: "";
   flex: 1 1;
   border-bottom: var(--borde-primario);
@@ -137,6 +143,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
 }
 
 #contenedor-pie-de-pagina {
@@ -154,8 +161,7 @@ body {
   letter-spacing: 10px;
 }
 
-#contenedor-pie-de-pagina:before,
-#contenedor-pie-de-pagina:after {
+#contenedor-pie-de-pagina:before, #contenedor-pie-de-pagina:after {
   content: "";
   flex: 1 1;
   border-bottom: var(--borde-primario);
@@ -168,13 +174,33 @@ body {
   z-index: 10;
   color: var(--color-secundario);
   max-width: 80%;
-  overflow-y: scroll;
   font-size: var(--titulo);
 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+#contenedor-comandos{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    width: 90%;
+    flex-flow: row wrap;
+}
+
+ul{
+    margin: 10px;
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    border-left: 4px solid var(--color-secundario);
+    border-right: 4px solid var(--color-secundario);
+    padding: 0px 10px;
+
+    font-size: var(--subtitulo);
 }
 
 #contenedor-texto::selection {
@@ -278,5 +304,11 @@ body {
     :root{
         --titulo: 30px;
         --subtitulo: 20px;
+    }
+}
+
+@media screen and (max-width:700px){
+    #contenedor-texto h2{
+        font-size: var(--titulo);
     }
 }

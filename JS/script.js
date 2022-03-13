@@ -70,17 +70,47 @@ let recognition;
         for (i = event.resultIndex; i<event.results.length; i++){
             if(event.results[i].isFinal){
                 let texto = event.results[i][0].transcript;
-                contenedorTexto.textContent = texto;
+                contenedorTexto.textContent = texto.toLowerCase();
+
+                //Refrescar la pagina
+                if(texto.toLowerCase().includes("refrescar página" || "refrescar la página")){
+                    contenedorTexto.textContent = "Refrescando página...";
+                    setTimeout(() => refrescarPagina(), 1000);
+                }
+
+                //Busqueda de texto en google
+                if(texto.toLowerCase().includes("buscar en google")){
+                    contenedorTexto.textContent = "Buscando en google...";
+                    setTimeout(() => window.open("https://www.google.com/search?q=" + texto.toLowerCase().replace("buscar en google", "")), 1000);
+                }
+
+                //Cerrar la ventana
+                if(texto.toLowerCase().includes("cerrar ventana")){
+                    contenedorTexto.textContent = "Cerrando ventana...";
+                    setTimeout(() => window.close(), 1000);
+                }
+
+                //Busqueda en youtube
+                if(texto.toLowerCase().includes("buscar en youtube")){
+                    contenedorTexto.textContent = "Buscando en youtube...";
+                    setTimeout(() => window.open("https://www.youtube.com/results?search_query=" + texto.toLowerCase().replace("buscar en youtube", "")), 1000);
+                }
+                
+                //Codigo konami
+                if(texto.toLowerCase().includes("arriba arriba abajo abajo izquierda derecha izquierda derecha b a")){
+                    contenedorTexto.textContent = "Oh no...";
+                    setTimeout(() => window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ"), 1000);
+                }
+
+                //Mostrar comandos disponibles
+                if(texto.toLowerCase().includes("comandos disponibles")){ 
+                    contenedorTexto.innerHTML = "<h2>Comandos disponibles</h2> <div id='contenedor-comandos' class='contenedor-comandos'> <ul> <li>Refrescar página</li> <li>Buscar en google</li> <li>Cerrar ventana</li> <li>Reproduce mi playlist</li> </ul> <ul> <li>Codigo konami</li> </ul> </div>";
+                }
             }
         }
     }
 
-function iniciarReconocimiento(){
-        recognition.start();
-}
-
-function detenerReconocimiento(){
-        recognition.stop();
-}
+const iniciarReconocimiento = () => recognition.start();
+const detenerReconocimiento = () => recognition.stop();
 
 iniciarReconocimiento();
