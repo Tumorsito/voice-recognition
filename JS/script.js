@@ -104,7 +104,7 @@ let recognition;
 
                 //Mostrar comandos disponibles
                 if(texto.toLowerCase().includes("comandos disponibles")){ 
-                    contenedorTexto.innerHTML = "<h2>Comandos disponibles</h2> <div id='contenedor-comandos' class='contenedor-comandos'> <ul> <li>Refrescar página</li> <li>Buscar en google</li> <li>Cerrar ventana</li> <li>Reproduce mi playlist</li> </ul> <ul> <li>Codigo konami</li> </ul> </div>";
+                    contenedorTexto.innerHTML = '<h2>Comandos disponibles</h2> <div id="contenedor-comandos" class="contenedor-comandos"> <ul> <li>Refrescar página</li> <li>Cerrar ventana</li> <li>Buscar en google</li> <li>Buscar en youtube</li> </ul> <ul> <li>Codigo konami</li> </ul> </div>';
                 }
             }
         }
