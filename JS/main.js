@@ -18,30 +18,18 @@ botonTitulo.addEventListener('click', refrescarPagina);
 
 /*>>>>>>>>>>>>>>>>>>> Reconocimiento de voz <<<<<<<<<<<<<<<<<<<*/
 let initRecognition = (event) => {
-    
+
     for (i = event.resultIndex; i < event.results.length; i++) {
-        
+
         if (event.results[i].isFinal) {
 
             let texto = event.results[i][0].transcript;
             seccionTexto.textContent = texto.toLowerCase();
 
-            //Refrescar la pagina
-            if (texto.toLowerCase().includes("refrescar página" || "refrescar la página")) {
-                seccionTexto.textContent = "Refrescando página...";
-                setTimeout(() => refrescarPagina(), 1000);
-            }
-
             //Busqueda de texto en google
             if (texto.toLowerCase().includes("buscar en google")) {
                 seccionTexto.textContent = "Buscando en google...";
                 setTimeout(() => window.open("https://www.google.com/search?q=" + texto.toLowerCase().replace("buscar en google", "")), 1000);
-            }
-
-            //Cerrar la ventana
-            if (texto.toLowerCase().includes("cerrar ventana")) {
-                seccionTexto.textContent = "Cerrando ventana...";
-                setTimeout(() => window.close(), 1000);
             }
 
             //Busqueda en youtube
@@ -56,11 +44,21 @@ let initRecognition = (event) => {
                 setTimeout(() => window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ"), 1000);
             }
 
-            //Mostrar comandos disponibles
-            if (texto.toLowerCase().includes("comandos disponibles")) {
-                seccionTexto.innerHTML = '<h2>Comandos disponibles</h2> <div id="contenedor-comandos" class="contenedor-comandos"> <ul> <li>Refrescar página</li> <li>Cerrar ventana</li> <li>Buscar en google</li> <li>Buscar en youtube</li> </ul> <ul> <li>Codigo konami</li> </ul> </div>';
+            //Calcula
+            if (texto.toLowerCase().includes("calcula")) {
+                let calculo = texto.toLowerCase().replace("calcula", "");
+                calculo = calculo.replace("entre", "/");
+                calculo = calculo.replace("mas", "+");
+                calculo = calculo.replace("más", "+");
+                calculo = calculo.replace("menos", "-");
+                calculo = calculo.replace("por", "*");
+                seccionTexto.textContent = "El resultado es: " + eval(calculo);
             }
 
+            //Mostrar comandos disponibles
+            if (texto.toLowerCase().includes("comandos disponibles")) {
+                seccionTexto.innerHTML = '<h2>Comandos disponibles</h2> <div id="contenedor-comandos" class="contenedor-comandos"> <ul> <li>Buscar en google</li> <li>Buscar en youtube</li> </ul> <ul> <li>Codigo kona</li> <li>Calcula</li> </ul> </div>';
+            }
         }
 
     }
@@ -71,7 +69,7 @@ let validateRecognition = (event) => {
     if (!('webkitSpeechRecognition' in window)) {
         seccionTexto.textContent = "Tu navegador no soporta el reconocimiento de voz, por favor ingresa en Google Chrome";
     }
-    
+
     else {
         recognition = new webkitSpeechRecognition();
         recognition.continuous = true;
