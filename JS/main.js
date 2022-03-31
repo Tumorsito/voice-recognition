@@ -24,24 +24,63 @@ let initRecognition = (event) => {
         if (event.results[i].isFinal) {
 
             let texto = event.results[i][0].transcript;
-            seccionTexto.textContent = texto.toLowerCase();
+            let flag = false;
 
-            //Busqueda de texto en google
-            if (texto.toLowerCase().includes("buscar en google")) {
-                seccionTexto.textContent = "Buscando en google...";
-                setTimeout(() => window.open("https://www.google.com/search?q=" + texto.toLowerCase().replace("buscar en google", "")), 1000);
-            }
+            //Paginas de busqueda
+            if (texto.toLowerCase().includes("busca") || texto.toLowerCase().includes("buscar")) {
 
-            //Busqueda en youtube
-            if (texto.toLowerCase().includes("buscar en youtube")) {
-                seccionTexto.textContent = "Buscando en youtube...";
-                setTimeout(() => window.open("https://www.youtube.com/results?search_query=" + texto.toLowerCase().replace("buscar en youtube", "")), 1000);
-            }
+                //Remplazamos buscar por busca
+                texto = texto.toLowerCase().replace("buscar", "busca");
 
-            //Codigo konami
-            if (texto.toLowerCase().includes("arriba arriba abajo abajo izquierda derecha izquierda derecha b a")) {
-                seccionTexto.textContent = "Oh no...";
-                setTimeout(() => window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ"), 1000);
+                //Busqueda de texto en google
+                if (texto.toLowerCase().includes("busca en google")) {
+                    typeText(seccionTexto, "Buscando en google...");
+                    setTimeout(() => window.open("https://www.google.com/search?q=" + texto.toLowerCase().replace("busca en google", "")), 1000);
+                    flag = true;
+                }
+
+                //Busqueda de texto en youtube
+                else if (texto.toLowerCase().includes("busca en youtube")) {
+                    typeText(seccionTexto, "Buscando en youtube...");
+                    setTimeout(() => window.open("https://www.youtube.com/results?search_query=" + texto.toLowerCase().replace("busca en youtube", "")), 1000);
+                    flag = true;
+                }
+
+                //Busqueda de texto en facebook
+                else if (texto.toLowerCase().includes("busca en facebook")) {
+                    typeText(seccionTexto, "Buscando en facebook...");
+                    setTimeout(() => window.open("https://www.facebook.com/search/top/?q=" + texto.toLowerCase().replace("busca en facebook", "")), 1000);
+                    flag = true;
+                }
+
+                //Busqueda de texto en twitter
+                else if (texto.toLowerCase().includes("busca en twitter")) {
+                    typeText(seccionTexto, "Buscando en twitter...");
+                    setTimeout(() => window.open("https://twitter.com/search?q=" + texto.toLowerCase().replace("busca en twitter", "")), 1000);
+                    flag = true;
+                }
+
+                //Busqueda de texto en pinterest
+                else if (texto.toLowerCase().includes("busca en pinterest")) {
+                    typeText(seccionTexto, "Buscando en pinterest...");
+                    setTimeout(() => window.open("https://www.pinterest.com/search/pins/?q=" + texto.toLowerCase().replace("busca en pinterest", "")), 1000);
+                    flag = true;
+                }
+
+                //Busqueda de texto en spotify
+                else if (texto.toLowerCase().includes("busca en spotify")) {
+                    typeText(seccionTexto, "Buscando en spotify...");
+                    setTimeout(() => window.open("https://open.spotify.com/search/" + texto.toLowerCase().replace("busca en spotify", "")), 1000);
+                    flag = true;
+                }
+
+                //Busqueda de texto en wikipedia
+                else if (texto.toLowerCase().includes("busca en wikipedia")) {
+                    typeText(seccionTexto, "Buscando en wikipedia...");
+                    setTimeout(() => window.open("https://es.wikipedia.org/wiki/" + texto.toLowerCase().replace("busca en wikipedia", "")), 1000);
+                    flag = true;
+                }
+
             }
 
             //Calcula
@@ -52,12 +91,19 @@ let initRecognition = (event) => {
                 calculo = calculo.replace("más", "+");
                 calculo = calculo.replace("menos", "-");
                 calculo = calculo.replace("por", "*");
-                seccionTexto.textContent = "El resultado es: " + eval(calculo);
+                typeText(seccionTexto, "El resultado es: " + eval(calculo));
+                flag = true;
             }
 
             //Mostrar comandos disponibles
             if (texto.toLowerCase().includes("comandos disponibles")) {
-                seccionTexto.innerHTML = '<h2>Comandos disponibles</h2> <div id="contenedor-comandos" class="contenedor-comandos"> <ul> <li>Buscar en google</li> <li>Buscar en youtube</li> </ul> <ul> <li>Codigo kona</li> <li>Calcula</li> </ul> </div>';
+                seccionTexto.innerHTML = '<h2 class="title-comandos-structure title-comandos-skin">Comandos disponibles</h2> <div id="contenedor-comandos" class="contenedor-comandos-structure contenedor-comandos-skin"> <ul class="lista-comandos-structure lista-comandos-skin"> <li>Busca en google</li> <li>Busca en youtube</li> <li>Busca en facebook</li> <li>Busca en twitter</li> <li>Busca en pinterest</li> <li>Busca en spotify</li> <li>Busca en wikipedia</li> <li>Calcula</li> <li>Comandos disponibles</li> </ul> </div>';
+                flag = true;
+            }
+
+            if (!flag) {
+                seccionTexto.textContent = "";
+                typeText(seccionTexto, texto);
             }
         }
 
@@ -77,6 +123,19 @@ let validateRecognition = (event) => {
         recognition.interim = true;
         recognition.addEventListener("result", initRecognition);
     }
+}
+
+let typeText = (element, text) => {
+    element.textContent = "";
+    let i = 0;
+    let interval = setInterval(() => {
+        element.textContent += text[i];
+        i++;
+        if (i == text.length) {
+            clearInterval(interval);
+        }
+    }, 20);
+
 }
 
 validateRecognition();

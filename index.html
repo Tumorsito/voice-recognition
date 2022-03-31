@@ -4,30 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- >>>>>>>>>>>>>>>>>>> Normalizamos la pagina a todos los navegadores <<<<<<<<<<<<<<<<<<< -->
     <link rel="stylesheet" href="CSS/normalize.css">
+
+    <!-- >>>>>>>>>>>>>>>>>>> Importamos los estilos y los iconos <<<<<<<<<<<<<<<<<<< -->
     <link rel="stylesheet" href="CSS/style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+
     <title>Reconocimiento de voz</title>
 </head>
 <body>
 
     <!-- >>>>>>>>>>>>>>>>>>> Contenedor principal <<<<<<<<<<<<<<<<<<< -->
+    <div id="particles-js" class="particles-structure particles-skin"></div>
     <div id="contenedor-principal" class="contenedor-principal-structure contenedor-principal-skin">
         
         <!-- >>>>>>>>>>>>>>>>>>> Cabecera <<<<<<<<<<<<<<<<<<< -->
         <header id="contenedor-cabecera" class="contenedor-cabecera-structure contenedor-cabecera-skin">
-            <div id="boton-titulo" class="boton-titulo-structure boton-titulo-skin">RECONOCIMIENTO DE VOZ</div>
+            <div id="boton-titulo" class="boton-titulo-structure boton-titulo-skin">LAIN</div>
         </header>
 
         <!-- >>>>>>>>>>>>>>>>>>> Articulo <<<<<<<<<<<<<<<<<<< -->
         <article id="contenedor-articulo" class="contenedor-articulo-structure contenedor-articulo-skin">
-            <div id="seccion-texto" class="seccion-texto-structure seccion-texto-skin"></div>
+            <div id="seccion-texto" class="seccion-texto-structure seccion-texto-skin">
+                <h2 class="title-comandos-structure title-comandos-skin">Comandos disponibles</h2> <div id="contenedor-comandos" class="contenedor-comandos-structure contenedor-comandos-skin"> <ul class="lista-comandos-structure lista-comandos-skin"> <li>Busca en google</li> <li>Busca en youtube</li> <li>Busca en facebook</li> <li>Busca en twitter</li> <li>Busca en pinterest</li> <li>Busca en spotify</li> <li>Busca en wikipedia</li> <li>Calcula</li> <li>Comandos disponibles</li> </ul> </div>
+            </div>
         </article>
 
     </div>
 
-    <!-- >>>>>>>>>>>>>>>>>>> Scripts <<<<<<<<<<<<<<<<<<< -->
+    <!-- >>>>>>>>>>>>>>>>>>> Importamos los scripts <<<<<<<<<<<<<<<<<<< -->
     <script src="JS/main.js"></script>
+    <script src="JS/lib/particles.js"></script>
+    <script src="JS/lib/app.js"></script>
 
 </body>
 </html>

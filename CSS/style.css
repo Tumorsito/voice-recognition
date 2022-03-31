@@ -2,15 +2,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap");
 * {
     font-family: "Amatic SC", cursive;
+    text-align: center;
 }
 
 *::selection {
-    background-color: var(--color-secundario);
-    color: var(--color-primario);
+    background-color: #fff;
+    color: #000;
 }
 
 :root {
-    --color-primario: #000;
+    --color-primario: rgba(255, 255, 255, 0);
     --color-secundario: #fff;
 
     --borde-primario: solid 8px var(--color-secundario);
@@ -25,6 +26,21 @@ body {
     width: 100vw;
     height: 100vh;
     font-size: 20px;
+    overflow: hidden;
+}
+
+/*>>>>>>>>>>>>>>>>>>> Particles JS <<<<<<<<<<<<<<<<<<<*/
+.particles-structure{
+    width: 110vw;
+    height: 110vh;
+    position: absolute;
+    top: -5vh;
+    left: -5vw;
+    z-index: -1;
+}
+
+.particles-skin{
+    background-color: #000;
 }
 
 /*>>>>>>>>>>>>>>>>>>> Contenedor principal <<<<<<<<<<<<<<<<<<<*/
@@ -95,11 +111,12 @@ body {
     cursor: pointer;
     transition-property: background-color, color, transform;
     transition-duration: 0.3s;
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 .boton-titulo-skin:hover {
-    background-color: var(--color-secundario);
-    color: var(--color-primario);
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #000000;
     transform: scale(1.1);
 }
 
@@ -122,23 +139,38 @@ body {
 .seccion-texto-structure {
     width: 80%;
     height: 90%;
+    max-height: 500px;
     z-index: 10;
     max-width: 80%;
-    padding: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 .seccion-texto-skin {
     color: var(--color-secundario);
-    background-color: var(--color-primario);
+    background-color: rgba(0, 0, 0, 0.8);
     border: var(--borde-primario);
     border-radius: var(--radio-borde);
     font-size: var(--titulo);
     font-weight: bold;
 }
+
+.contenedor-comandos-structure{
+    -moz-column-count: auto;
+    -moz-column-gap: auto;
+    -webkit-column-count: auto;
+    -webkit-column-gap: auto;
+    column-count: 3;
+    column-gap: auto;
+}
+
+.contenedor-comandos-structure *{
+    list-style: none;
+    text-align: center;
+}
+
 
 /*>>>>>>>>>>>>>>>>>>> Media Query <<<<<<<<<<<<<<<<<<<*/
 @media screen and (min-width: 1200px) and (max-width: 1600px) { 
@@ -161,6 +193,23 @@ body {
     .boton-titulo-skin {
         letter-spacing: 0.2rem;
     }
+
+    .contenedor-comandos-structure{
+        -moz-column-count: auto;
+        -moz-column-gap: auto;
+        -webkit-column-count: auto;
+        -webkit-column-gap: auto;
+        column-count: 1;
+        column-gap: auto;
+    }
+
+    .title-comandos-structure{
+        font-size: var(--titulo);
+    }
+
+    .lista-comandos-structure{
+        font-size: 0.9em;
+    }
 }
 
 @media screen and (max-width: 319px) { 
@@ -170,5 +219,22 @@ body {
 
     .boton-titulo-skin {
         letter-spacing: 0.2rem;
+    }
+
+    .contenedor-comandos-structure{
+        -moz-column-count: auto;
+        -moz-column-gap: auto;
+        -webkit-column-count: auto;
+        -webkit-column-gap: auto;
+        column-count: 1;
+        column-gap: auto;
+    }
+
+    .title-comandos-structure{
+        font-size: var(--titulo);
+    }
+
+    .lista-comandos-structure{
+        font-size: 0.9em;
     }
 }
