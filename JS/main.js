@@ -8,13 +8,18 @@ let seccionTexto = document.getElementById('seccion-texto');
 
 let recognition = new webkitSpeechRecognition();
 
+let preloader = document.getElementById('preloader-container');
+
 /*>>>>>>>>>>>>>>>>>>> Funciones <<<<<<<<<<<<<<<<<<<*/
 let refrescarPagina = () => location.reload();
+
 let iniciarReconocimiento = () => recognition.start();
 let detenerReconocimiento = () => recognition.stop();
 
+let ocultarPreloader = () => preloader.style.display = "none";
 /*>>>>>>>>>>>>>>>>>>> Eventos <<<<<<<<<<<<<<<<<<<*/
 botonTitulo.addEventListener('click', refrescarPagina);
+window.addEventListener("load", ocultarPreloader);
 
 /*>>>>>>>>>>>>>>>>>>> Reconocimiento de voz <<<<<<<<<<<<<<<<<<<*/
 let initRecognition = (event) => {

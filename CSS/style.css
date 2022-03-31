@@ -29,6 +29,48 @@ body {
     overflow: hidden;
 }
 
+/*----------Preloader container----------*/
+.preloader-container-structure {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 999999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.preloader-container-skin {
+    background-color: #000;
+}
+
+/*----------Preloader----------*/
+.preloader-structure {
+    width: 100px;
+    height: 100px;
+}
+
+.preloader-skin {
+    border: 3px solid #fff;
+    border-radius: 50%;
+    border-top-color: #000;
+    animation: spin 1s ease-in-out infinite;
+    -webkit-animation: spin 1s ease-in-out infinite;
+}
+
+/*----------Preloader animation----------*/
+@keyframes spin {
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+@-webkit-keyframes spin {
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+
 /*>>>>>>>>>>>>>>>>>>> Particles JS <<<<<<<<<<<<<<<<<<<*/
 .particles-structure{
     width: 110vw;
@@ -146,6 +188,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
+    padding: 1rem;
 }
 
 .seccion-texto-skin {
