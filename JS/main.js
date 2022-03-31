@@ -125,8 +125,10 @@ let validateRecognition = (event) => {
     }
 }
 
+/*>>>>>>>>>>>>>>>>>>> TypeIt <<<<<<<<<<<<<<<<<<<*/
 let typeText = (element, text) => {
     element.textContent = "";
+    
     let i = 0;
     let interval = setInterval(() => {
         element.textContent += text[i];
