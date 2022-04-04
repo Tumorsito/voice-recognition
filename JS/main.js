@@ -17,12 +17,12 @@ let iniciarReconocimiento = () => recognition.start();
 let detenerReconocimiento = () => recognition.stop();
 
 let ocultarPreloader = () => preloader.style.display = "none";
- 
+
 let lainBadEnding = () => window.open("https://tumorsito.github.io/voice-recognition/ENDINGS/badEnding.html", "_self");
 
-let lainGoodEnding = () =>  window.open("https://tumorsito.github.io/voice-recognition/ENDINGS/goodEnding.html", "_self");
+let lainGoodEnding = () => window.open("https://tumorsito.github.io/voice-recognition/ENDINGS/goodEnding.html", "_self");
 
-let lainNormalEnding = () =>  window.open("https://tumorsito.github.io/voice-recognition/ENDINGS/normalEnding.html", "_self");
+let lainNormalEnding = () => window.open("https://tumorsito.github.io/voice-recognition/ENDINGS/normalEnding.html", "_self");
 
 /*>>>>>>>>>>>>>>>>>>> Eventos <<<<<<<<<<<<<<<<<<<*/
 botonTitulo.addEventListener('click', refrescarPagina);
@@ -33,7 +33,7 @@ let initRecognition = (event) => {
 
     //Guardamos las palabras reconocidas en un array
     for (i = event.resultIndex; i < event.results.length; i++) {
-        
+
         //Si el resultado termina de recorrerse
         if (event.results[i].isFinal) {
 
@@ -111,16 +111,18 @@ let initRecognition = (event) => {
             }
 
             //Codigo Konami
-            if (texto.toLowerCase().includes("prueba")) {
+            if (texto.toLowerCase().includes("arriba arriba abajo abajo izquierda derecha izquierda derecha b a")) {
                 typeText(seccionTexto, "Oh no...");
-                let random = Math.floor(Math.random() * 3);
-                 if (random == 0) {
-                     lainGoodEnding();
-                 } else if (random == 1) {
-                     lainBadEnding();
-                 } else if (random == 2) {
-                     lainNormalEnding();
-                 }
+                setTimeout(() => {
+                    let random = Math.floor(Math.random() * 3);
+                    if (random == 0) {
+                        lainGoodEnding();
+                    } else if (random == 1) {
+                        lainBadEnding();
+                    } else if (random == 2) {
+                        lainNormalEnding();
+                    }
+                }, 1000);
 
                 flag = true;
             }
@@ -158,7 +160,7 @@ let validateRecognition = (event) => {
 /*>>>>>>>>>>>>>>>>>>> TypeIt <<<<<<<<<<<<<<<<<<<*/
 let typeText = (element, text) => {
     element.textContent = "";
-    
+
     let i = 0;
     let interval = setInterval(() => {
         element.textContent += text[i];
