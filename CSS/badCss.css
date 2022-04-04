@@ -1,0 +1,12 @@
+html, body{
+    background-color: black;
+}
+
+.horror-structure{
+    width: 100%;
+    height: 100%;
+}
+
+.horror-skin{
+    background-image: url('https://tumorsito.github.io/voice-recognition/IMG/LainMeister.gif');
+}

@@ -10,6 +10,9 @@ let recognition = new webkitSpeechRecognition();
 
 let preloader = document.getElementById('preloader-container');
 
+let beepPath = '/SOUNDS/Beep_beep.wav';
+let lainBadPath = '/IMG/LainMeister.gif';
+
 /*>>>>>>>>>>>>>>>>>>> Funciones <<<<<<<<<<<<<<<<<<<*/
 let refrescarPagina = () => location.reload();
 
@@ -17,6 +20,16 @@ let iniciarReconocimiento = () => recognition.start();
 let detenerReconocimiento = () => recognition.stop();
 
 let ocultarPreloader = () => preloader.style.display = "none";
+ 
+let lainBadEnding = () => {
+    let audio = new Audio(lainBadPath);
+    audio.play();
+
+}
+
+let lainGoodEnding = () => {}
+let lainNormalEnding = () => {}
+
 /*>>>>>>>>>>>>>>>>>>> Eventos <<<<<<<<<<<<<<<<<<<*/
 botonTitulo.addEventListener('click', refrescarPagina);
 window.addEventListener("load", ocultarPreloader);
@@ -24,17 +37,20 @@ window.addEventListener("load", ocultarPreloader);
 /*>>>>>>>>>>>>>>>>>>> Reconocimiento de voz <<<<<<<<<<<<<<<<<<<*/
 let initRecognition = (event) => {
 
+    //Guardamos las palabras reconocidas en un array
     for (i = event.resultIndex; i < event.results.length; i++) {
-
+        
+        //Si el resultado termina de recorrerse
         if (event.results[i].isFinal) {
 
+            //Guardamos las palabras en una variable
             let texto = event.results[i][0].transcript;
             let flag = false;
 
             //Paginas de busqueda
             if (texto.toLowerCase().includes("busca") || texto.toLowerCase().includes("buscar")) {
 
-                //Remplazamos buscar por busca
+                //Remplazamos buscar por busca para que funcione si decimos buscar o busca
                 texto = texto.toLowerCase().replace("buscar", "busca");
 
                 //Busqueda de texto en google
@@ -97,6 +113,23 @@ let initRecognition = (event) => {
                 calculo = calculo.replace("menos", "-");
                 calculo = calculo.replace("por", "*");
                 typeText(seccionTexto, "El resultado es: " + eval(calculo));
+                flag = true;
+            }
+
+            //Codigo Konami
+            if (texto.toLowerCase().includes("prueba")) {
+                
+                // let random = Math.floor(Math.random() * 3);
+                // if (random == 0) {
+                //     lainGoodEnding();
+                // } else if (random == 1) {
+                //     lainBadEnding();
+                // } else if (random == 2) {
+                //     lainNormalEnding();
+                // }
+
+                lainBadEnding();
+
                 flag = true;
             }
 
