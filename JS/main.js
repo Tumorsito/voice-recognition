@@ -117,7 +117,7 @@ let initRecognition = (event) => {
 
             //Codigo Konami
             if (texto.toLowerCase().includes("prueba")) {
-                
+                typeText(seccionTexto, "Oh no...");
                 // let random = Math.floor(Math.random() * 3);
                 // if (random == 0) {
                 //     lainGoodEnding();
