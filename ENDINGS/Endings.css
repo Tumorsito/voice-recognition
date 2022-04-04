@@ -3,11 +3,12 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    background: url('https://tumorsito.github.io/voice-recognition/IMG/bg_701.gif');
-    -webkit-animation: slide 0.001s linear infinite;
-    -moz-animation: slide 0.001s linear infinite;
-    -o-animation: slide 0.001s linear infinite;
-    animation: slide 0.001s linear infinite;
+    background: url('https://tumorsito.github.io/voice-recognition/IMG/bg_darker.gif');
+    background-color: black;
+    -webkit-animation: slide-element 30s linear infinite ;
+    -moz-animation: slide-element 30s linear infinite reverse;
+    -o-animation: slide-element 30s linear infinite reverse;
+    animation: slide-element 30s linear infinite reverse;
 }
 
 .logo{
@@ -21,14 +22,15 @@
 
 .lain-wired{
     position: absolute;
-    width: 500px;
-    height: 500px;
-    background: url('https://tumorsito.github.io/voice-recognition/IMG/lain_wired.gif');
+    width: 600px;
+    height: 600px;
+    background: url('https://tumorsito.github.io/voice-recognition/IMG/BuddahLein.gif');
     z-index: 1;
-    left: calc(50% - 250px);
-    top: calc(50% - 250px);
+    left: calc(50% - 300px);
+    top: 0;
     background-position: center;
     background-size: contain;
+    background-repeat: no-repeat;
 }
 
 .normalLogo{

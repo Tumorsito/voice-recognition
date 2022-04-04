@@ -21,11 +21,11 @@ let detenerReconocimiento = () => recognition.stop();
 
 let ocultarPreloader = () => preloader.style.display = "none";
  
-let lainBadEnding = () => window.open("badEnding.html", "_self");
+let lainBadEnding = () => window.open("../ENDINGS/badEnding.html", "_self");
 
-let lainGoodEnding = () =>  window.open("goodEnding.html", "_self");
+let lainGoodEnding = () =>  window.open("../ENDINGS/goodEnding.html", "_self");
 
-let lainNormalEnding = () =>  window.open("normalEnding.html", "_self");
+let lainNormalEnding = () =>  window.open("../ENDINGS/normalEnding.html", "_self");
 
 /*>>>>>>>>>>>>>>>>>>> Eventos <<<<<<<<<<<<<<<<<<<*/
 botonTitulo.addEventListener('click', refrescarPagina);
