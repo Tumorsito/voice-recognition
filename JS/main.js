@@ -22,9 +22,8 @@ let detenerReconocimiento = () => recognition.stop();
 let ocultarPreloader = () => preloader.style.display = "none";
  
 let lainBadEnding = () => {
-    let audio = new Audio(lainBadPath);
-    audio.play();
-
+    //Open page badEnding.html 
+    window.open("badEnding.html", "_self");
 }
 
 let lainGoodEnding = () => {}
