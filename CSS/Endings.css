@@ -1,4 +1,4 @@
-
+/* ---------- Normal ending ---------- */
 .normal-body{
     background-image: url('https://tumorsito.github.io/voice-recognition/IMG/bg_46.gif');
 }
@@ -66,8 +66,19 @@
     background-size: 100% 100%;
 }
 
-.good-lain{
+.good-lain-structure{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
     
+}
+
+.good-lain-skin{
+    background-image: url("https://tumorsito.github.io/voice-recognition/IMG/16c.gif");
+    background-size: 838px 650px;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 /* ---------- Bad ending ---------- */
