@@ -23,10 +23,12 @@
     position: absolute;
     width: 500px;
     height: 500px;
-    background: url('https://tumorsito.github.io/voice-recognition/IMG/lain-wired.gif');
+    background: url('https://tumorsito.github.io/voice-recognition/IMG/lain_wired.gif');
     z-index: 1;
     left: calc(50% - 250px);
     top: calc(50% - 250px);
+    background-position: center;
+    background-size: contain;
 }
 
 .normalLogo{
