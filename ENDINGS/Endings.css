@@ -3,7 +3,7 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    background: url('https://tumorsito.github.io/voice-recognition/IMG/bg_darker.gif');
+    background: url('https://tumorsito.github.io/voice-recognition/ENDINGS/IMG/bg_darker.gif');
     background-color: black;
     -webkit-animation: slide-element 30s linear infinite ;
     -moz-animation: slide-element 30s linear infinite reverse;
@@ -16,7 +16,7 @@
     margin-top: -350px;
     width: 100%;
     height: 298px;
-    background: url('https://tumorsito.github.io/voice-recognition/IMG/besj2.gif');
+    background: url('https://tumorsito.github.io/voice-recognition/ENDINGS/IMG/besj2.gif');
     z-index: 1;
 }
 
@@ -24,7 +24,7 @@
     position: absolute;
     width: 600px;
     height: 600px;
-    background: url('https://tumorsito.github.io/voice-recognition/IMG/BuddahLein.gif');
+    background: url('https://tumorsito.github.io/voice-recognition/ENDINGS/IMG/BuddahLein.gif');
     z-index: 1;
     left: calc(50% - 300px);
     top: 0;
@@ -85,7 +85,7 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    background: url('https://tumorsito.github.io/voice-recognition/IMG/wind6.gif');
+    background: url('https://tumorsito.github.io/voice-recognition/ENDINGS/IMG/wind6.gif');
     -webkit-animation: slide 0.7s linear infinite;
     -moz-animation: slide 0.7s linear infinite;
     animation: slide 0.7s linear infinite;
@@ -118,7 +118,7 @@
 }
 
 .leftHand-skin{
-    background-image: url("https://tumorsito.github.io/voice-recognition/IMG/lefthand.gif");
+    background-image: url("https://tumorsito.github.io/voice-recognition/ENDINGS/IMG/lefthand.gif");
     background-size: 100% 100%;
 
 }
@@ -132,7 +132,7 @@
 }
 
 .rightHand-skin{
-    background-image: url("https://tumorsito.github.io/voice-recognition/IMG/righthand.gif");
+    background-image: url("https://tumorsito.github.io/voice-recognition/ENDINGS/IMG/righthand.gif");
     background-size: 100% 100%;
 }
 
@@ -145,7 +145,7 @@
 }
 
 .good-lain-skin{
-    background-image: url("https://tumorsito.github.io/voice-recognition/IMG/16c.gif");
+    background-image: url("https://tumorsito.github.io/voice-recognition/ENDINGS/IMG/16c.gif");
     background-size: 838px 650px;
     background-repeat: no-repeat;
     background-position: center;
@@ -155,7 +155,7 @@
 
 .bad-body{
     background-color: black;
-    background-image: url('https://tumorsito.github.io/voice-recognition/IMG/bg_46.gif');
+    background-image: url('https://tumorsito.github.io/voice-recognition/ENDINGS/IMG/bg_46.gif');
 }
 
 .bad-structure{
@@ -165,7 +165,7 @@
 }
 
 .bad-skin{
-    background-image: url('https://tumorsito.github.io/voice-recognition/IMG/LainMeister.gif');
+    background-image: url('https://tumorsito.github.io/voice-recognition/ENDINGS/IMG/LainMeister.gif');
     background-size:auto;
     background-repeat: no-repeat;
     background-position: center;

@@ -10,9 +10,6 @@ let recognition = new webkitSpeechRecognition();
 
 let preloader = document.getElementById('preloader-container');
 
-let beepPath = '/SOUNDS/Beep_beep.wav';
-let lainBadPath = '/IMG/LainMeister.gif';
-
 /*>>>>>>>>>>>>>>>>>>> Funciones <<<<<<<<<<<<<<<<<<<*/
 let refrescarPagina = () => location.reload();
 
@@ -21,11 +18,11 @@ let detenerReconocimiento = () => recognition.stop();
 
 let ocultarPreloader = () => preloader.style.display = "none";
  
-let lainBadEnding = () => window.open("../ENDINGS/badEnding.html", "_self");
+let lainBadEnding = () => window.open("https://tumorsito.github.io/voice-recognition/ENDINGS/badEnding.html", "_self");
 
-let lainGoodEnding = () =>  window.open("../ENDINGS/goodEnding.html", "_self");
+let lainGoodEnding = () =>  window.open("https://tumorsito.github.io/voice-recognition/ENDINGS/goodEnding.html", "_self");
 
-let lainNormalEnding = () =>  window.open("../ENDINGS/normalEnding.html", "_self");
+let lainNormalEnding = () =>  window.open("https://tumorsito.github.io/voice-recognition/ENDINGS/normalEnding.html", "_self");
 
 /*>>>>>>>>>>>>>>>>>>> Eventos <<<<<<<<<<<<<<<<<<<*/
 botonTitulo.addEventListener('click', refrescarPagina);
