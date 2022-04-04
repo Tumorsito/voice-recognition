@@ -1,13 +1,79 @@
-.bad-body{
-    background-color: black;
+
+.normal-body{
     background-image: url('https://tumorsito.github.io/voice-recognition/IMG/bg_46.gif');
 }
 
+
+/* ---------- Good ending ---------- */
+
 .good-body{
-    background-image: url('https://tumorsito.github.io/voice-recognition/IMG/wind6.gif');
+    background-color: black;
 }
 
-.normal-body{
+.wind{
+    float: left;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('https://tumorsito.github.io/voice-recognition/IMG/wind6.gif');
+    -webkit-animation: slide 0.7s linear infinite;
+    -moz-animation: slide 0.7s linear infinite;
+    animation: slide 0.7s linear infinite;
+    z-index: 1;
+}
+
+@keyframes slide {
+    from{
+        background-position:400px;
+    }
+    to{
+        background-position:-400px;
+    }
+}
+
+.good-structure{
+    position: absolute;
+    width: 90%;
+    height: 50%;
+    z-index: 2;
+    top: 50%;
+    left: 5%;
+}
+
+.leftHand-structure{
+    position: absolute;
+    width: 30%;
+    height: 100%;
+    z-index: 2;
+}
+
+.leftHand-skin{
+    background-image: url("https://tumorsito.github.io/voice-recognition/IMG/lefthand.gif");
+    background-size: 100% 100%;
+
+}
+
+.rightHand-structure{
+    position: absolute;
+    width: 30%;
+    height: 100%;
+    z-index: 2;
+    left: 70%;
+}
+
+.rightHand-skin{
+    background-image: url("https://tumorsito.github.io/voice-recognition/IMG/righthand.gif");
+    background-size: 100% 100%;
+}
+
+.good-lain{
+    
+}
+
+/* ---------- Bad ending ---------- */
+
+.bad-body{
+    background-color: black;
     background-image: url('https://tumorsito.github.io/voice-recognition/IMG/bg_46.gif');
 }
 
