@@ -21,13 +21,11 @@ let detenerReconocimiento = () => recognition.stop();
 
 let ocultarPreloader = () => preloader.style.display = "none";
  
-let lainBadEnding = () => {
-    //Open page badEnding.html 
-    window.open("badEnding.html", "_self");
-}
+let lainBadEnding = () => window.open("badEnding.html", "_self");
 
-let lainGoodEnding = () => {}
-let lainNormalEnding = () => {}
+let lainGoodEnding = () =>  window.open("goodEnding.html", "_self");
+
+let lainNormalEnding = () =>  window.open("normalEnding.html", "_self");
 
 /*>>>>>>>>>>>>>>>>>>> Eventos <<<<<<<<<<<<<<<<<<<*/
 botonTitulo.addEventListener('click', refrescarPagina);
@@ -118,16 +116,14 @@ let initRecognition = (event) => {
             //Codigo Konami
             if (texto.toLowerCase().includes("prueba")) {
                 typeText(seccionTexto, "Oh no...");
-                // let random = Math.floor(Math.random() * 3);
-                // if (random == 0) {
-                //     lainGoodEnding();
-                // } else if (random == 1) {
-                //     lainBadEnding();
-                // } else if (random == 2) {
-                //     lainNormalEnding();
-                // }
-
-                lainBadEnding();
+                let random = Math.floor(Math.random() * 3);
+                 if (random == 0) {
+                     lainGoodEnding();
+                 } else if (random == 1) {
+                     lainBadEnding();
+                 } else if (random == 2) {
+                     lainNormalEnding();
+                 }
 
                 flag = true;
             }

@@ -1,0 +1,26 @@
+.bad-body{
+    background-color: black;
+    background-image: url('https://tumorsito.github.io/voice-recognition/IMG/bg_46.gif');
+}
+
+.good-body{
+    background-image: url('https://tumorsito.github.io/voice-recognition/IMG/wind4.gif');
+}
+
+.normal-body{
+    background-image: url('https://tumorsito.github.io/voice-recognition/IMG/bg_46.gif');
+}
+
+.bad-structure{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.bad-skin{
+    background-image: url('https://tumorsito.github.io/voice-recognition/IMG/LainMeister.gif');
+    background-size:auto;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
