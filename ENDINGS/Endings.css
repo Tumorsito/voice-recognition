@@ -171,3 +171,6 @@
     background-position: center;
 }
 
+*{
+    overflow: hidden;
+}

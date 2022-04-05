@@ -94,7 +94,6 @@ body {
     grid-template-rows: 25vh 75vh;
     grid-template-areas:
         "cabecera"
-        "articulo"
         "articulo";
 }
 
@@ -143,7 +142,6 @@ body {
 .boton-titulo-skin {
     -webkit-user-select: none;
     -moz-user-select: none;
-    -ms-user-select: none;
     user-select: none;
     border: var(--borde-primario);
     border-radius: var(--radio-borde);

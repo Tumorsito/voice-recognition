@@ -6,9 +6,10 @@ let contenedorArticulo = document.getElementById('contenedor-articulo');
 let botonTitulo = document.getElementById('boton-titulo');
 let seccionTexto = document.getElementById('seccion-texto');
 
-let recognition = new webkitSpeechRecognition();
-
 let preloader = document.getElementById('preloader-container');
+
+//Inicializamos la libreria de voz a texto
+let recognition = new webkitSpeechRecognition();
 
 /*>>>>>>>>>>>>>>>>>>> Funciones <<<<<<<<<<<<<<<<<<<*/
 let refrescarPagina = () => location.reload();
@@ -157,7 +158,7 @@ let validateRecognition = (event) => {
     }
 }
 
-/*>>>>>>>>>>>>>>>>>>> TypeIt <<<<<<<<<<<<<<<<<<<*/
+/*>>>>>>>>>>>>>>>>>>> TypeText para escribir letra por letra <<<<<<<<<<<<<<<<<<<*/
 let typeText = (element, text) => {
     element.textContent = "";
 
